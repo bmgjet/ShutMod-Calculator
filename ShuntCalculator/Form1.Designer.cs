@@ -32,24 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,59 +66,86 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.maskedTextBox4);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.maskedTextBox3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(713, 313);
+            this.groupBox1.Size = new System.Drawing.Size(713, 373);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calculator";
             // 
-            // label8
+            // radioButton2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(375, 255);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 25);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "732";
-            this.toolTip1.SetToolTip(this.label8, "New max power limit thats adjustable too.");
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(500, 77);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(104, 29);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.Text = "3 Plug";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(359, 77);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(104, 29);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "2 Plug";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(317, 162);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(226, 29);
+            this.checkBox2.TabIndex = 13;
+            this.checkBox2.Text = "Slot Shunt modded";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(317, 211);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(389, 29);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Shunts Replaced instead of stacked";
+            this.toolTip1.SetToolTip(this.checkBox1, "Replacing the shunt instead of stacking them.");
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 255);
+            this.label7.Location = new System.Drawing.Point(218, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 25);
             this.label7.TabIndex = 10;
             this.label7.Text = "700";
             this.toolTip1.SetToolTip(this.label7, "New power limit with card on defaulk setting.");
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(375, 215);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 25);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "New Max Power Limit:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 215);
+            this.label5.Location = new System.Drawing.Point(13, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 25);
             this.label5.TabIndex = 8;
@@ -128,7 +153,7 @@
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(380, 164);
+            this.maskedTextBox4.Location = new System.Drawing.Point(16, 243);
             this.maskedTextBox4.Mask = "000";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.PromptChar = ' ';
@@ -141,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(375, 127);
+            this.label4.Location = new System.Drawing.Point(13, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 25);
             this.label4.TabIndex = 6;
@@ -149,7 +174,7 @@
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(11, 164);
+            this.maskedTextBox3.Location = new System.Drawing.Point(11, 162);
             this.maskedTextBox3.Mask = "000";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.PromptChar = ' ';
@@ -168,57 +193,27 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Default Shunt";
             // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(380, 77);
-            this.maskedTextBox2.Mask = "000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(285, 31);
-            this.maskedTextBox2.TabIndex = 3;
-            this.maskedTextBox2.Text = "366";
-            this.toolTip1.SetToolTip(this.maskedTextBox2, "Enter your cards max power limit");
-            this.maskedTextBox2.TextChanged += new System.EventHandler(this.maskedTextBox2_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(375, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cards Max Power Limit (W):";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 25);
+            this.label1.Size = new System.Drawing.Size(232, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Cards Stock Power Limit (W):";
+            this.label1.Text = "Cards Power Limit (W):";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(12, 339);
+            this.groupBox2.Location = new System.Drawing.Point(12, 391);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(713, 245);
+            this.groupBox2.Size = new System.Drawing.Size(713, 143);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Maths";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 194);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 25);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "            ";
             // 
             // label12
             // 
@@ -256,23 +251,11 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "              ";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(163, 166);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(135, 29);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Replaced";
-            this.toolTip1.SetToolTip(this.checkBox1, "Replacing the shunt instead of stacking them.");
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 602);
+            this.ClientSize = new System.Drawing.Size(740, 555);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -281,6 +264,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "ShuntMod Calculator by bmgjet";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -293,25 +277,23 @@
 
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
