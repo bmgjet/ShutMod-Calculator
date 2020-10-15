@@ -100,10 +100,11 @@ namespace ShuntCalculator
                     {
                         label10.Text = "3 Plug: Slot=" + newslot + "W Plug1=" + Math.Round(newplug1, 1).ToString() + "W Plug2=" + Math.Round(newplug2, 1).ToString() + "W Plug3=" + Math.Round(newplug3, 1).ToString() + "W";
                     }
-                        
+
+                    label11.Text = "HWInfo Multiplyer: " + Math.Round((newdefpl / defpl),2).ToString();
 
 
-                
+
             }
             catch
             {
