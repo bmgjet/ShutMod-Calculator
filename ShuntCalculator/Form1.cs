@@ -96,12 +96,16 @@ namespace ShuntCalculator
                     {
                         label10.Text = "2 Plug: Slot="+ newslot+"W Plug1 =" + Math.Round(newplug1, 1).ToString() + "W Plug2=" + Math.Round(newplug2, 1).ToString() + "w";
                     }
+                    else if (radioButton3.Checked)
+                    {
+                    label10.Text = "12 Pin Plug: Slot=" + newslot + "W Plug=" + Math.Round(newplug1 + newplug2, 1).ToString() + "W";
+                    }
                     else
                     {
                         label10.Text = "3 Plug: Slot=" + newslot + "W Plug1=" + Math.Round(newplug1, 1).ToString() + "W Plug2=" + Math.Round(newplug2, 1).ToString() + "W Plug3=" + Math.Round(newplug3, 1).ToString() + "W";
                     }
 
-                    label11.Text = "HWInfo Multiplyer: " + Math.Round((newdefpl / defpl),2).ToString();
+                    label11.Text = "HWInfo/GPUz Multiplyer: " + Math.Round((newdefpl / defpl),2).ToString();
 
 
 
@@ -159,6 +163,11 @@ namespace ShuntCalculator
         private void Form1_Load(object sender, EventArgs e)
         {
             Setdefaultlimiter();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/bmgjet/ShutMod-Calculator");
         }
     }
 }
