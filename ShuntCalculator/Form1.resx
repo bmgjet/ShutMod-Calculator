@@ -120,6 +120,14 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label13.ToolTip" xml:space="preserve">
+    <value>Shunt Modding your card will void your warranty.
+Any damage that may happen is solely on yourself.
+
+Warnings: 
+EVGA Cards have 20amp fuses on the connectors and 10 amp on the slot.
+Make sure to keep each connector under 240W and 112W on the slot.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

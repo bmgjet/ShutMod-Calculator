@@ -5,6 +5,8 @@ namespace ShuntCalculator
 {
     public partial class Form1 : Form
     {
+        private double[] storedpowerlimit = new double[4];
+
         public Form1()
         {
             InitializeComponent();
@@ -87,24 +89,16 @@ namespace ShuntCalculator
 
 
                 double newdefpl = newslot + newplug1 + newplug2 + newplug3;
+                storedpowerlimit[0] = newslot;
+                storedpowerlimit[1] = newplug1;
+                storedpowerlimit[2] = newplug2;
+                storedpowerlimit[3] = newplug3;
 
                     // label10.Text = (defpl + 75).ToString() + "W = " + Math.Round(sensevoltage1, 2).ToString() + "mv Sensor voltage";
                     //label11.Text = Math.Round(sensevoltage1, 2).ToString() + "mv now = " + Math.Round(NewAmps1, 2).ToString() + "Amp with " + dc.ToString() + "MΩ";
                     label7.Text = (newdefpl).ToString() + "W";
-
-                    if (radioButton1.Checked)
-                    {
-                        label10.Text = "2 Plug: Slot="+ newslot+"W Plug1 =" + Math.Round(newplug1, 1).ToString() + "W Plug2=" + Math.Round(newplug2, 1).ToString() + "w";
-                    }
-                    else if (radioButton3.Checked)
-                    {
-                    label10.Text = "12 Pin Plug: Slot=" + newslot + "W Plug=" + Math.Round(newplug1 + newplug2, 1).ToString() + "W";
-                    }
-                    else
-                    {
-                        label10.Text = "3 Plug: Slot=" + newslot + "W Plug1=" + Math.Round(newplug1, 1).ToString() + "W Plug2=" + Math.Round(newplug2, 1).ToString() + "W Plug3=" + Math.Round(newplug3, 1).ToString() + "W";
-                    }
-
+                    trackbar1.Value = 100;
+                    plugmaths(newslot, newplug1, newplug2, newplug3);
                     label11.Text = "HWInfo/GPUz Multiplyer: " + Math.Round((newdefpl / defpl),2).ToString();
 
 
@@ -116,6 +110,27 @@ namespace ShuntCalculator
             }
         }
 
+
+        private void plugmaths(double newslot,double newplug1, double newplug2, double newplug3)
+        {
+            newslot = Math.Round(newslot, 1);
+            newplug1 = Math.Round(newplug1, 1);
+            newplug2 = Math.Round(newplug2, 1);
+            newplug3 = Math.Round(newplug3, 1);
+
+            if (radioButton1.Checked)
+            {
+                label10.Text = "Slot = " + newslot + "W Plug1 = " + Math.Round(newplug1, 1).ToString() + "W Plug2 = " + Math.Round(newplug2, 1).ToString() + "w";
+            }
+            else if (radioButton3.Checked)
+            {
+                label10.Text = "Slot = " + newslot + "W Plug = " + Math.Round(newplug1 + newplug2, 1).ToString() + "W";
+            }
+            else
+            {
+                label10.Text = "Slot = " + newslot + "W Plug1 = " + Math.Round(newplug1, 1).ToString() + "W Plug2 = " + Math.Round(newplug2, 1).ToString() + "W Plug3 = " + Math.Round(newplug3, 1).ToString() + "W";
+            }
+        }
 
         private void maskedTextBox3_TextChanged(object sender, EventArgs e)
         {
@@ -168,6 +183,15 @@ namespace ShuntCalculator
         private void label2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/bmgjet/ShutMod-Calculator");
+        }
+
+        private void trackbar1_ValueChanged(object sender, EventArgs e)
+        {
+            label8.Text = trackbar1.Value.ToString() + "%";
+            float diff = (trackbar1.Value / 100f);
+            double boardpower = storedpowerlimit[0] + storedpowerlimit[1] + storedpowerlimit[2] + storedpowerlimit[3];
+            label7.Text = (Math.Round(diff * boardpower, 2)).ToString() + "W";
+            plugmaths(diff * storedpowerlimit[0], diff * storedpowerlimit[1],diff * storedpowerlimit[2],diff * storedpowerlimit[3]);
         }
     }
 }
