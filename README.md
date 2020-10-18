@@ -16,3 +16,9 @@ These have raitings for 10 amps for the slot and 20 amps for the connectors each
 
 <img src="https://raw.githubusercontent.com/bmgjet/ShutMod-Calculator/main/ShuntMap%20EVGA%20XC3.jpg">
 <img src="https://raw.githubusercontent.com/bmgjet/ShutMod-Calculator/main/pcishunt.png">
+
+
+Note MSI People.
+Your card has 20amp fuses for each connector.
+So it supports 240W per plug and slot.
+<img src="https://raw.githubusercontent.com/bmgjet/ShutMod-Calculator/main/MSIShunts.jpg">
