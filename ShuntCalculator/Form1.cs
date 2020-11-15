@@ -26,17 +26,17 @@ namespace ShuntCalculator
                 float defpl = float.Parse(maskedTextBox1.Text);
 
                 //set up power split
-                float slot = 75;
-                float plug1 = (defpl - 75) / 2;
-                float plug2 = (defpl -75) / 2;
+                float slot = int.Parse(maskedTextBox2.Text);
+                float plug1 = (defpl - int.Parse(maskedTextBox2.Text)) / 2;
+                float plug2 = (defpl - int.Parse(maskedTextBox2.Text)) / 2;
                 float plug3 = 0; //Zero since 2 plug card doesnt have this input.
 
                 //3 plug card split
                 if (radioButton2.Checked)
                 {
-                    plug1 = (defpl - 75) / 3;
-                    plug2 = (defpl - 75) / 3;
-                    plug3 = (defpl - 75) / 3;
+                    plug1 = (defpl - int.Parse(maskedTextBox2.Text)) / 3;
+                    plug2 = (defpl - int.Parse(maskedTextBox2.Text)) / 3;
+                    plug3 = (defpl - int.Parse(maskedTextBox2.Text)) / 3;
                 }
 
 
@@ -94,8 +94,6 @@ namespace ShuntCalculator
                 storedpowerlimit[2] = newplug2;
                 storedpowerlimit[3] = newplug3;
 
-                    // label10.Text = (defpl + 75).ToString() + "W = " + Math.Round(sensevoltage1, 2).ToString() + "mv Sensor voltage";
-                    //label11.Text = Math.Round(sensevoltage1, 2).ToString() + "mv now = " + Math.Round(NewAmps1, 2).ToString() + "Amp with " + dc.ToString() + "MΩ";
                     label7.Text = (newdefpl).ToString() + "W";
                     trackbar1.Value = 100;
                     plugmaths(newslot, newplug1, newplug2, newplug3);
@@ -192,6 +190,11 @@ namespace ShuntCalculator
             double boardpower = storedpowerlimit[0] + storedpowerlimit[1] + storedpowerlimit[2] + storedpowerlimit[3];
             label7.Text = (Math.Round(diff * boardpower, 2)).ToString() + "W";
             plugmaths(diff * storedpowerlimit[0], diff * storedpowerlimit[1],diff * storedpowerlimit[2],diff * storedpowerlimit[3]);
+        }
+
+        private void maskedTextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            Setdefaultlimiter();
         }
     }
 }
